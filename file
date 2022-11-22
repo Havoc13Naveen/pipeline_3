@@ -13,22 +13,23 @@ pipeline {
             echo "hi"
             }
         }
-    }
-    stages('test parallel'){
-        parallel{
-            stage ('test parallel 1 '){
-                agnet{label 'slave_1'}
-           steps{
-            echo"this is agent 1"
-           }
-            }
-            stage ('test parallel 2'){
-                agnet{label 'master'}
+        stage('test parallel'){
+          parallel{
+                stage ('test parallel 1 '){
+                    agent{label 'slave_1'}
+                     steps{
+                         echo"this is agent 1"
+                        }
+                    }
+                    stage ('test parallel 2'){
+                     agent{label 'master'}
            
-                steps{
-                    echo"this is agent 1"
+                        steps{
+                            echo"this is agent 1"
+                        }
+                    }
                 }
             }
-         }
+        }
     }
 }
