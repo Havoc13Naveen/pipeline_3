@@ -13,6 +13,7 @@ pipeline {
             echo "hi"
             }
         }
+    }
     stage('test parallel'){
         parallel{
             stage ('test parallel 1 '){
@@ -26,10 +27,6 @@ pipeline {
            steps{
             echo"this is agent 1"
            }
-            }   
-        
-         }
         }
     }
-
 }
