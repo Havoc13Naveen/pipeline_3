@@ -9,7 +9,7 @@ pipeline {
         }
         stage('deploy'){
             agent {label 'slave_2'}
-            steps{
+            steps
             echo "hi"
             }
         }
