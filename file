@@ -13,7 +13,6 @@ pipeline {
             echo "hi"
             }
         }
-    }
     stage('test parallel'){
         parallel{
             stage('test parallel 1 '){
@@ -29,7 +28,7 @@ pipeline {
            }
             }   
         
-        }
+         }
         }
     }
 
