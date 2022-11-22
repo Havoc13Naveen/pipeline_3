@@ -14,7 +14,7 @@ pipeline {
             }
         }
     }
-    stage('test parallel'){
+    stages('test parallel'){
         parallel{
             stage ('test parallel 1 '){
                 agnet{label 'slave_1'}
