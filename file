@@ -1,13 +1,13 @@
 pipeline {
     agent none
     stages{
-        stage('build'){
+        stage ('build'){
             agent{label 'slave_3'}
             steps{
                 echo "hello world"
             }
         }
-        stage('deploy'){
+        stage ('deploy'){
             agent {label 'slave_2'}
             steps{
             echo "hi"
@@ -15,13 +15,13 @@ pipeline {
         }
     stage('test parallel'){
         parallel{
-            stage('test parallel 1 '){
+            stage ('test parallel 1 '){
                 agnet{label 'slave_1'}
            steps{
             echo"this is agent 1"
            }
             }
-            stage('test parallel 2'){
+            stage ('test parallel 2'){
                 agnet{label 'master'}
            steps{
             echo"this is agent 1"
