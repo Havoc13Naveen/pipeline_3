@@ -24,9 +24,11 @@ pipeline {
             }
             stage ('test parallel 2'){
                 agnet{label 'master'}
-           steps{
-            echo"this is agent 1"
-           }
-        }
+           
+                steps{
+                    echo"this is agent 1"
+                }
+            }
+         }
     }
 }
