@@ -9,9 +9,28 @@ pipeline {
         }
         stage('deploy'){
             agent {label 'slave_2'}
-            steps
+            steps{
             echo "hi"
             }
         }
     }
+    stage('test parallel'){
+        parallel{
+            stage('test parallel 1 '){
+                agnet{label 'slave_1'}
+           steps{
+            echo"this is agent 1"
+           }
+            }
+            stage('test parallel 2'){
+                agnet{label 'master'}
+           steps{
+            echo"this is agent 1"
+           }
+            }   
+        
+        }
+        }
+    }
+
 }
